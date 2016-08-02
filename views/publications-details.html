@@ -1,5 +1,11 @@
 {% extends "layouts/two-columns.html" %}
 
+{% block breadcrumbs %}
+  <li><a href="/">Home</a></li>
+  <li><a href="/search">Search</a></li>
+  <li><a>{{ title | truncate(35) }}</a></li>
+{% endblock %}
+
 {% block main %}
 <article>
   <h2>Abstract</h2>

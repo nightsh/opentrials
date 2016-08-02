@@ -1,5 +1,13 @@
 {% extends "layouts/one-column.html" %}
 
+{% block breadcrumbs %}
+  <li><a href="/">Home</a></li>
+  <li><a href="/search">Search</a></li>
+  <li><a href="/trials/{{ record.trial_id }}">{{ record.trial_id | truncate(15) }}</a></li>
+  <li><a>Records</a></li>
+  <li><a>{{ title | truncate(35) }}</a></li>
+{% endblock %}
+
 {% block main %}
 <article>
   This trial's record was last updated on

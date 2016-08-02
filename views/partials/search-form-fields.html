@@ -24,12 +24,15 @@
 
   {% if trials %}
     <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a>Search</a></li>
+      {% if query.q %}
       <li>
-        <a href="/search">Search</a>
-      </li>
-      <li>
-        Found {{ trials.total_count | formatNumber }} trial{% if trials.total_count != 1 %}s{% endif %}
-      </li>
+        <a>
+          {{ query.q }} ({{ trials.total_count | formatNumber }}
+          trial{% if trials.total_count != 1 %}s{% endif %})
+        </a></li>
+      {% endif %}
     </ul>
   {% endif %}
 </div>

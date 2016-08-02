@@ -1,5 +1,10 @@
 {% extends "layouts/one-column.html" %}
 
+{% block breadcrumbs %}
+  <li><a href="/">Home</a></li>
+  <li><a>{{ title | truncate(35) }}</a></li>
+{% endblock %}
+
 {% block main %}
 <div class="video-wrapper">
   <iframe src="https://www.youtube.com/embed/8RxULD-8Gwg?feature=oembed" frameborder="0" allowfullscreen=""></iframe>
