@@ -111,6 +111,16 @@ const routes = [
     method: 'POST',
     config: require('../handlers/admin/data-contributions').post,
   },
+  {
+    path: '/takedown',
+    method: 'GET',
+    config: require('../handlers/takedown'),
+  },
+  {
+    path: '/flag',
+    method: 'GET',
+    config: require('../handlers/flag'),
+  },
 ];
 
 module.exports = routes;
