@@ -1,0 +1,11 @@
+{% extends "layouts/one-column.html" %}
+
+{% block breadcrumb %}
+  <li><a href="/">Home</a></li>
+  <li>{{ title | truncate(35) }}</li>
+{% endblock %}
+
+{% block main %}
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc49nJx0Ie8q8b24yYNX2DrqIWN44P9DsF9k4Y_VkU7y81rFg/viewform?entry.783048384={{flagURL}}&embedded=true"
+    frameborder=0 style="width: 100%; height: 1300px;"></iframe>
+{% endblock %}

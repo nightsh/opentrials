@@ -1,0 +1,17 @@
+'use strict';
+
+function takedown(request, reply) {
+  const takedownForm = `https://docs.google.com/forms/d/e/1FAIpQLSew2Rsu5EY-SYODFzZCh2wMWKcbcJe5CQlMFoyH8shmIE1jfQ/viewform`;
+  const url = request.query.url;
+  reply.redirect(`${takedownForm}?entry.579116872=${url}`);
+
+  //reply.view('takedown', {
+  //  title: 'Takedown Request',
+  //  takedownURL: request.query.url,
+  //});
+}
+
+
+module.exports = {
+  handler: takedown,
+};
