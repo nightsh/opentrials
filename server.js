@@ -17,7 +17,7 @@ server.register(config.hapi.plugins)
   .then(() => {
     const baseConfiguration = {
       password: config.hapi.auth.cookie.password,
-      isSecure: false,  // FIXME: Set to true in production when issue #100 is fixed
+      isSecure: true,
       domain: url.parse(config.url).hostname,
     };
 
