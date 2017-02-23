@@ -17,6 +17,7 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "dev": "gulp dev",
+    "debug": "node --inspect ./node_modules/.bin/gulp dev",
     "prestart": "gulp build",
     "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 server.js"
   },

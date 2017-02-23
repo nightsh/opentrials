@@ -6,7 +6,7 @@ const uuid = require('node-uuid');
 const User = require('../models/user');
 const OAuthCredential = require('../models/oauth-credential');
 const DataContribution = require('../models/data-contribution');
-const DataCategory = require('../models/data-category');
+const DataCategory = require('../agents/document_categories');
 
 const userAttributes = {
   id: () => uuid.v1(),
@@ -45,7 +45,7 @@ factory.define('dataContribution', DataContribution, {
   id: () => uuid.v1(),
   user_id: factory.assoc('user', 'id'),
   trial_id: () => uuid.v1(),
-  data_category_id: factory.assoc('dataCategory', 'id'),
+  document_category_id: factory.assoc('dataCategory', 'id'),
   data_url: factory.sequence((n) => `http://opentrials-test.s3.amazonaws.com/uploads/${uuid.v1()}/file-${n}.pdf`),
   url: factory.sequence((n) => `http://somewhere.com/file-${n}.pdf`),
   comments: factory.sequence((n) => `Data upload ${n}`),
@@ -54,7 +54,9 @@ factory.define('dataContribution', DataContribution, {
 });
 
 factory.define('dataCategory', DataCategory, {
+  id: factory.sequence((n) => `category${n}`),
   name: factory.sequence((n) => `category${n}`),
+  group: factory.sequence((n) => `category${n}`),
 });
 
 module.exports = factory;

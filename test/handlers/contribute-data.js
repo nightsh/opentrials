@@ -3,7 +3,6 @@
 const should = require('should');
 const config = require('../../config');
 const DataContribution = require('../../models/data-contribution');
-const DataCategory = require('../../models/data-category');
 
 
 describe('contribute-data handler', () => {
